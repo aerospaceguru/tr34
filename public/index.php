@@ -16,56 +16,57 @@
   <div class="container">
     <br>
     <hr>
-  <h3 style="text-align: center;">TR34 Slab Load Check</h3>
+    <h3 style="text-align: center;">TR34 Slab Load Check</h3>
     <div class="row">
       <div class="col-sm text-auto">
 
         <form action="tr34.php" method="POST">
           <div class="form-group">
-          <label for="conc">Concrete:</label>
-          <select class="form-control" name="conc">
-            <option disabled selected value>Select</option>
-            <option value="a">C25/30</option>
-            <option value="b">C28/35</option>
-            <option value="c">C30/37</option>
-            <option value="d">C32/40</option>
-            <option value="e">C35/45</option>
-            <option value="f">C40/50</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="h">Slab depth (mm):</label>
-          <input class="form-control" type="text" name="h"></div>
+            <label for="r">Reinforcement:</label>
+            <select class="form-control" name="r">
+              <option disabled selected value>Select</option>
+              <option value="r">Reinforced</option>
+              <option value="ur" disabled>Un-reinforced (under review)</option>
+            </select></div>
           <div class="form-group">
-          <label for="h">Yield strength (MPa):</label>
-          <input class="form-control" type="text" name="fyk"></div>
+            <label for="conc">Concrete:</label>
+            <select class="form-control" name="conc">
+              <option disabled selected value>Select</option>
+              <option value="a">C25/30</option>
+              <option value="b">C28/35</option>
+              <option value="c">C30/37</option>
+              <option value="d">C32/40</option>
+              <option value="e">C35/45</option>
+              <option value="f">C40/50</option>
+            </select>
+          </div>
           <div class="form-group">
-          <label for="h">Area of steel (mm2):</label>
-          <input class="form-control" type="text" name="As"></div>
+            <label for="h">Slab depth (mm):</label>
+            <input class="form-control" type="text" name="h"></div>
           <div class="form-group">
-          <label for="h">Bar diameter (mm):</label>
-          <input class="form-control" type="text" name="bar_dia"></div>
+            <label for="h">Yield strength (MPa):</label>
+            <input class="form-control" type="text" name="fyk"></div>
           <div class="form-group">
-          <label for="h">Cover (mm):</label>
-          <input class="form-control" type="text" name="cover"></div>
+            <label for="h">Area of steel (mm2):</label>
+            <input class="form-control" type="text" name="As"></div>
           <div class="form-group">
-          <label for="h">Point load (kN):</label>
-          <input class="form-control" type="text" name="Qk"></div>
+            <label for="h">Bar diameter (mm):</label>
+            <input class="form-control" type="text" name="bar_dia"></div>
           <div class="form-group">
-          <label for="h">Tyre area (mm2):</label>
-          <input class="form-control" type="text" name="tyre_area"></div>
+            <label for="h">Cover (mm):</label>
+            <input class="form-control" type="text" name="cover"></div>
           <div class="form-group">
-          <label for="h">K30:</label>
-          <input class="form-control" type="text" name="k30"></div>
+            <label for="h">Point load (kN):</label>
+            <input class="form-control" type="text" name="Qk"></div>
           <div class="form-group">
-          <label for="h">Number of loads:</label>
-          <input class="form-control" type="text" name="N"></div>
+            <label for="h">Tyre area (mm2):</label>
+            <input class="form-control" type="text" name="tyre_area"></div>
           <div class="form-group">
-          <label for="r">Reinforcement:</label>
-          <select class="form-control"name="r">
-            <option value="r">Reinforced</option>
-            <option value="ur">Un-reinforced</option>
-          </select></div>
+            <label for="h">K30:</label>
+            <input class="form-control" type="text" name="k30"></div>
+          <div class="form-group">
+            <label for="h">Number of loads:</label>
+            <input class="form-control" type="text" name="N"></div>
           <Button class="btn btn-primary" type="submit" value="Calculate">Calculate</Button>
         </form>
         <br>

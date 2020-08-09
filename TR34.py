@@ -1,5 +1,13 @@
 import math
 
+###############################################################
+#                                                             #
+#  *** NB: UN-REINFORCED SOLUTION NEEDS REVIEW DO NOT USE *** #
+#                                                             #
+###############################################################
+
+
+
 C25_30 = {'fck': 25, 'fcu': 30, 'fcm': 33, 'fctm': 2.6, 'Ecm': 31000}
 C28_35 = {'fck': 28, 'fcu': 35, 'fcm': 36, 'fctm': 2.8, 'Ecm': 32000}
 C30_37 = {'fck': 30, 'fcu': 37, 'fcm': 38, 'fctm': 2.9, 'Ecm': 33000}
@@ -101,4 +109,4 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
         print('--->     *** FAIL ***')
 
 # Example calculation
-tr34(conc=C32_40, h=205, fyk=500, As=393, bar_dia=10, cover=30, Qk=157, tyre_area=74761, k30=20, N=1, r='ur')  # F-15E
+tr34(conc=C32_40, h=205, fyk=500, As=393, bar_dia=10, cover=30, Qk=157, tyre_area=74761, k30=20, N=1, r='r')  # F-15E
