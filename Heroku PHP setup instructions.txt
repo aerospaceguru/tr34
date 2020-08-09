@@ -1,0 +1,7 @@
+Add composer.json file with content set to '{}'
+Add Procfile with contents set to 'web: vendor/bin/heroku-php-apache2 public/'
+Place index.php file into public folder
+$ heroku create [APP_NAME]
+$ heroku buildpacks:set heroku/php
+$ heroku ps:scale web=1
+$ heroku open
