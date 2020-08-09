@@ -141,8 +141,9 @@ $example->calculate(
     $N = $_POST['N'],
     $r = $_POST['r']
 );
-//$example->calculate($conc=$example->concretes['a'], $h=205, $fyk=500, $As=393, $bar_dia=10, $cover=30, $Qk=157, $tyre_area=74761, $k30=20, $N=1, $r='ur');  // F-15E
+
 ?>
+    
 </body>
 
 </html>
