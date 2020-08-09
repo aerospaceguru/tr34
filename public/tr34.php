@@ -4,7 +4,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 <style>
 body {
-    font-family: 'Roboto';font-size: 22px;
+    font-family: 'Roboto';font-size: 18px;
 }
 </style>
     </head>
@@ -119,10 +119,10 @@ class Tr34
         echo "<h6>>>>    a/l > 0.2 = " . number_format($rr, 2) . "</h6>";
         echo "<h6>>>>    Fuls = " . number_format($Fuls, 2) . " kN</h6>";
         echo "<h6>>>>    Pu (ult. capacity single conc. internal load) = " . number_format($Pu, 2) . " kN</h6>";
-        echo "<h6>>>>    PPmax (punching shear capacity) = " . number_format($Ppmax, 2) . " kN</h6>";
-        echo "<h6>>>>    Pp (shear capacity critical perimeter) = " . number_format($Pp, 2) . " kN</h6>";
-        echo "<h6>>>>    Mpfab (Moment capacity steel fabric reinforced) = " . number_format($Mpfab, 2) . " kNm/m</h6>";
-        echo "<h6>>>>    Mun (Moment capacity un-reinforced) = " . number_format($Mun, 2) . " kNm/m</h6>";
+        echo "<h6>>>>    PPmax (punching shear cap.) = " . number_format($Ppmax, 2) . " kN</h6>";
+        echo "<h6>>>>    Pp (shear cap. critical perimeter) = " . number_format($Pp, 2) . " kN</h6>";
+        echo "<h6>>>>    Mpfab (Moment cap. mesh reinforced) = " . number_format($Mpfab, 2) . " kNm/m</h6>";
+        echo "<h6>>>>    Mun (Moment cap. un-reinforced) = " . number_format($Mun, 2) . " kNm/m</h6>";
         
         if (($Fuls < $Ppmax) && ($Fuls < $Pp) && ($Fuls < $Pu)) {
             echo "<h6 style=color:green;>>>>    *** PASS ***</h6>";
