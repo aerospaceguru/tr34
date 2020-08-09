@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+    <head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Roboto';font-size: 22px;
+}
+</style>
+    </head>
 <body>
 <?php
 
@@ -75,18 +83,18 @@ class Tr34
             $vrdc = (0.18 * $ks) * pow((100 * $rho1 * $conc['fck']), 0.33);
             $vrdc_min = 0.035 * pow($ks, 1.5) * pow($conc['fck'], 0.5);
             if ($vrdc >= $vrdc_min) {
-                echo "<h4 style=color:green;>>>>>     vrdc OK</h4>";
+                echo "<h6 style=color:green;>>>>    vrdc OK</h6>";
             } else {
-                echo "<h4 style=color:red;>>>>>     vrdc FAIL</h4>";
+                echo "<h6 style=color:red;>>>>    vrdc FAIL</h6>";
             }
-            echo "<h4 style=color:blue;>>>>>     *** REINFORCED ***";
+            echo "<h6 style=color:blue;>>>>    *** REINFORCED ***";
 
         } elseif ($r == 'ur') {
 
             // Shear on the critical perimeter (unreinforced)
             $ks = 1 + pow((200 / $d), 0.5);
             $vrdc = 0.035 * pow($ks, 1.5) * pow($conc['fck'], 0.5);
-            echo "<h4 style=color:brown;>>>>>     *** UN-REINFORCED ***</h4>";
+            echo "<h6 style=color:brown;>>>>    *** UN-REINFORCED ***</h6>";
         }
 
         // Shear capacity critical perimeter
@@ -96,7 +104,7 @@ class Tr34
         $bottom = 12 * (1 - pow($poisson, 2)) * $k30;
         $combined = $top / $bottom;
         $l = pow($combined, 0.25);
-        echo "<h4>>>>>     l = " . number_format($l, 2) . " mm</h4>";
+        echo "<h6>>>>    l = " . number_format($l, 2) . " mm</h6>";
         $rr = $a / $l;
 
         if ($r == 'r') {
@@ -108,18 +116,18 @@ class Tr34
         // Ultimate limit state
         $Fuls = $N * $Qk * $yQ;
 
-        echo "<h4>>>>>     a/l > 0.2 = " . number_format($rr, 2) . "</h4>";
-        echo "<h4>>>>>     Fuls = " . number_format($Fuls, 2) . " kN</h4>";
-        echo "<h4>>>>>     Pu (ult. capacity single conc. internal load) = " . number_format($Pu, 2) . " kN</h4>";
-        echo "<h4>>>>>     PPmax (punching shear capacity) = " . number_format($Ppmax, 2) . " kN</h4>";
-        echo "<h4>>>>>     Pp (shear capacity critical perimeter) = " . number_format($Pp, 2) . " kN</h4>";
-        echo "<h4>>>>>     Mpfab (Moment capacity steel fabric reinforced) = " . number_format($Mpfab, 2) . " kNm/m</h4>";
-        echo "<h4>>>>>     Mun (Moment capacity un-reinforced) = " . number_format($Mun, 2) . " kNm/m</h4>";
+        echo "<h6>>>>    a/l > 0.2 = " . number_format($rr, 2) . "</h6>";
+        echo "<h6>>>>    Fuls = " . number_format($Fuls, 2) . " kN</h6>";
+        echo "<h6>>>>    Pu (ult. capacity single conc. internal load) = " . number_format($Pu, 2) . " kN</h6>";
+        echo "<h6>>>>    PPmax (punching shear capacity) = " . number_format($Ppmax, 2) . " kN</h6>";
+        echo "<h6>>>>    Pp (shear capacity critical perimeter) = " . number_format($Pp, 2) . " kN</h6>";
+        echo "<h6>>>>    Mpfab (Moment capacity steel fabric reinforced) = " . number_format($Mpfab, 2) . " kNm/m</h6>";
+        echo "<h6>>>>    Mun (Moment capacity un-reinforced) = " . number_format($Mun, 2) . " kNm/m</h6>";
         
         if (($Fuls < $Ppmax) && ($Fuls < $Pp) && ($Fuls < $Pu)) {
-            echo "<h4 style=color:green;>>>>>     *** PASS ***</h4>";
+            echo "<h6 style=color:green;>>>>    *** PASS ***</h6>";
         } else {
-            echo "<h4 style=color:red;>>>>>     *** FAIL ***</h4>";
+            echo "<h6 style=color:red;>>>>    *** FAIL ***</h6>";
         }
 
     }
