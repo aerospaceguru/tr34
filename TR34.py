@@ -3,7 +3,6 @@ import math
 ###############################################################
 #                                                             #
 #  *** NB: UN-REINFORCED SOLUTION NEEDS REVIEW DO NOT USE *** #
-#  *** GENERALLY NOT A RELIABLE PROGRAMME. DONT USE.      *** #
 #                                                             #
 ###############################################################
 
@@ -31,6 +30,7 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
     u0 = 2 * (li + lw)
     a = math.sqrt((tyre_area / math.pi))
     u1 = 2 * (li + lw + (2 * d * math.pi))
+    print('--->     u1 = ' + "%.0f" % u1 + ' mm') 
 
     # For slabs thinner than 600mm flexural tensile strength is:
     # fctd_fl = fctm * (1.6 – h/1000)/γm
@@ -65,13 +65,15 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
         else:
             ks = ks
         vrdc = (0.18 * ks) * math.pow((100 * rho1 * conc['fck']), 0.33)
+        print('--->     vrdc = ' + "%.3f" % vrdc + ' N/mm2')
         vrdc_min = 0.035 * math.pow(ks, 1.5) * math.pow(conc['fck'], 0.5)
+        print('--->     vrdc_min = ' + "%.3f" % vrdc_min + ' N/mm2')
         if vrdc >= vrdc_min:
             print('\n--->     vrdc OK')
         else:
             print('\n--->     vrdc FAIL')
         print('--->     *** REINFORCED ***')
-
+        print('--->     ks = '+ "%.2f" % ks)
     elif r == 'ur':
         # Shear on the critical perimeter (unreinforced)
         ks = 1 + math.pow((200 / d), 0.5)
@@ -79,7 +81,7 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
         print('\n--->     *** UN-REINFORCED ***')
 
     # Shear capacity critical perimeter
-    Pp = vrdc * u1 * d / 1000
+    Pp = vrdc_min * u1 * d / 1000
 
     top = conc['Ecm'] * math.pow(h, 3)
     bottom = 12 * (1 - math.pow(poisson, 2)) * k30
@@ -110,4 +112,5 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
         print('--->     *** FAIL ***')
 
 # Example calculation
-tr34(conc=C32_40, h=205, fyk=500, As=393, bar_dia=10, cover=30, Qk=157, tyre_area=74761, k30=20, N=1, r='r')  # F-15E
+tr34(conc=C32_40, h=200, fyk=500, As=393, bar_dia=10, cover=30, Qk=157, tyre_area=74761, k30=20, N=1, r='r')  # F-15E
+tr34(conc=C32_40, h=200, fyk=500, As=393, bar_dia=10, cover=30, Qk=110, tyre_area=47186, k30=20, N=1, r='r')  # Typhoon
