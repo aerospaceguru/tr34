@@ -22,7 +22,7 @@ def tr34(conc, h, fyk, As, bar_dia, cover, Qk, tyre_area, k30, N, r):
     ys = 1.15
     yQ = 1.5
     poisson = 0.2
-    k30 = k30 / 100
+    k30 = k30 / 1000
 
     d = (h - cover - bar_dia)
     li = math.sqrt(tyre_area)
