@@ -3,6 +3,7 @@ import math
 ###############################################################
 #                                                             #
 #  *** NB: UN-REINFORCED SOLUTION NEEDS REVIEW DO NOT USE *** #
+#  ***    ONLY CONSIDERS POINT LOAD IN CENTRE OF SLAB     *** #
 #                                                             #
 ###############################################################
 
