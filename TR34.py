@@ -3,6 +3,7 @@ import math
 ###############################################################
 #                                                             #
 #  *** NB: UN-REINFORCED SOLUTION NEEDS REVIEW DO NOT USE *** #
+#  *** GENERALLY NOT A RELIABLE PROGRAMME. DONT USE.      *** #
 #                                                             #
 ###############################################################
 
